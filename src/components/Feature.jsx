@@ -3,6 +3,7 @@ import { FaShieldAlt } from 'react-icons/fa'
 import { FaTruck } from 'react-icons/fa'
 import { FaClock } from 'react-icons/fa'
 import { FaAward } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 export function Features() {
   const features = [
@@ -63,9 +64,9 @@ export function Features() {
           <p className="text-xl mb-8 text-[#f4ebd0]">
           Join thousands of professionals who trust Yard Dog Workwear for their workwear needs.
           </p>
-          <button className="bg-[#b68d40] text-white hover:bg-[#d6ad60] px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+          <Link to="/products"  className="bg-[#b68d40] text-white hover:bg-[#d6ad60] px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
             Start Shopping
-          </button>
+          </Link>
         </div>
       </div>
     </section>
