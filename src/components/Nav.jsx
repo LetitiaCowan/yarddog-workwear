@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../assets/logoRender.png";
+import logo from "../assets/mainLogo_transparent.PNG";
 import { FaBars, FaShoppingBag } from "react-icons/fa";
 import Sidebar from "./Sidebar";
 import { useLocation } from "react-router-dom";
