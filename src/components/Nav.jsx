@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/mainLogo_transparent.PNG";
 import { FaBars, FaShoppingBag } from "react-icons/fa";
 import Sidebar from "./Sidebar";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +23,8 @@ export const Nav = () => {
   }, []);
 
   const isProductsPage = location.pathname === "/products";
-  const textColor = isProductsPage ? "text-gray-900" : (scrolled ? "text-gray-900" : "text-white");
+  const isProductPage = location.pathname.startsWith("/product");
+  const textColor = isProductsPage || isProductPage ? "text-gray-900" : (scrolled ? "text-gray-900" : "text-white");
 
   return (
     <div
@@ -42,20 +43,20 @@ export const Nav = () => {
         toggleSidebar={toggleSidebar}
         setIsOpen={setIsOpen}
       />
-      <div className="flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
+      <Link to="/" className="flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
         <span className="w-[60px] flex-shrink-0">
           <img
             src={logo}
             alt="logo"
             className={`w-full transition duration-300 ${
-              isProductsPage ? "" : (scrolled ? "" : "invert")
+              isProductsPage || isProductPage ? "" : (scrolled ? "" : "invert")
             }`}
           />
         </span>
         <h1 className={`text-2xl font-bold flex-shrink ${textColor}`}>
-          Yard Dog Workwear
+        YARD DOG WORKWEAR
         </h1>
-      </div>
+      </Link>
       <ul className={`text-sm flex items-center gap-4 font-bold ${textColor} `}>
         <li>Instagram</li>
         <li>Facebook</li>

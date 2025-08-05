@@ -5,15 +5,19 @@ import Home from "./pages/Home.jsx";
 import { Nav } from "./components/Nav.jsx";
 import Products from "./pages/Products.jsx";
 import Auth from "./pages/Auth.jsx";
+import Product from "./pages/Product.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const App = () => {
   return (
     <Router>
       <div className="w-full min-h-screen bg-white relative">
+        <ScrollToTop />
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/product/:id" element={<Product />} />
           <Route path="/auth" element={<Auth />} />
         </Routes>
         <Footer />
