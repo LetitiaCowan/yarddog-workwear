@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 export function Hero() {
   return (
     <section className="relative bg-gray-900 text-white">
@@ -15,28 +16,34 @@ export function Hero() {
             Professional Workwear That Works As Hard As You Do
           </h1>
           <div className="flex flex-row gap-4 w-full max-w-[1400px]">
-          <p className="text-xl lg:text-1xl mb-8 text-[#f4ebd0]">
-            Born in the backyards, sheds, and worksites of Australia, Yard Dog
-            Workwear is built for the men and women who stay loyal to the job —
-            rain, dust, or 40 in the shade. Like the yard dog that never strays,
-            our gear’s made to be tough, ready, and always on deck. No gimmicks.
-            Just gear that works as hard as you do.
-          </p>
-          <p className="text-xl lg:text-1xl mb-8 text-[#f4ebd0]">
-            For the women on the tools, in the yards, and on the frontlines —
-            Yard Dog Workwear builds gear that’s made to grind, made to last,
-            and made to fit. Because hard work doesn’t care who’s wearing the
-            boots.
-          </p>
+            <p className="text-xl lg:text-1xl mb-8 text-[#f4ebd0]">
+              Born in the backyards, sheds, and worksites of Australia, Yard Dog
+              Workwear is built for the men and women who stay loyal to the job
+              — rain, dust, or 40 in the shade. Like the yard dog that never
+              strays, our gear’s made to be tough, ready, and always on deck. No
+              gimmicks. Just gear that works as hard as you do.
+            </p>
+            <p className="text-xl lg:text-1xl mb-8 text-[#f4ebd0]">
+              For the women on the tools, in the yards, and on the frontlines —
+              Yard Dog Workwear builds gear that’s made to grind, made to last,
+              and made to fit. Because hard work doesn’t care who’s wearing the
+              boots.
+            </p>
           </div>
-         
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-[#b68d40] hover:bg-[#d6ad60] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+            <Link
+              to="/products"
+              className="bg-[#b68d40] hover:bg-[#d6ad60] text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center"
+            >
               Shop Now
-            </button>
-            <button className="border-2 border-[#f4ebd0] text-[#f4ebd0] hover:bg-[#f4ebd0] hover:text-[#122620] px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
-              View Catalog
-            </button>
+            </Link>
+            <Link
+              to="/products"
+              className="border-2 border-[#f4ebd0] text-[#f4ebd0] hover:bg-[#f4ebd0] hover:text-[#122620] px-8 py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center w-full sm:w-auto"
+            >
+              View Catalogue
+            </Link>
           </div>
         </div>
       </div>
