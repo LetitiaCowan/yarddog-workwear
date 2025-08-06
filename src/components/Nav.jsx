@@ -24,7 +24,12 @@ export const Nav = () => {
 
   const isProductsPage = location.pathname === "/products";
   const isProductPage = location.pathname.startsWith("/product");
-  const textColor = isProductsPage || isProductPage ? "text-gray-900" : (scrolled ? "text-gray-900" : "text-white");
+  const textColor =
+    isProductsPage || isProductPage
+      ? "text-gray-900"
+      : scrolled
+      ? "text-gray-900"
+      : "text-white";
 
   return (
     <div
@@ -43,28 +48,35 @@ export const Nav = () => {
         toggleSidebar={toggleSidebar}
         setIsOpen={setIsOpen}
       />
-      <Link to="/" className="flex items-center gap-4 absolute left-1/2 -translate-x-1/2">
+      <Link
+        to="/"
+        className="flex items-center gap-4 absolute left-1/2 -translate-x-1/2"
+      >
         <span className="w-[60px] flex-shrink-0">
           <img
             src={logo}
             alt="logo"
             className={`w-full transition duration-300 ${
-              isProductsPage || isProductPage ? "" : (scrolled ? "" : "invert")
+              isProductsPage || isProductPage ? "" : scrolled ? "" : "invert"
             }`}
           />
         </span>
         <h1 className={`text-2xl font-bold flex-shrink ${textColor}`}>
-        YARD DOG WORKWEAR
+          YARD DOG WORKWEAR
         </h1>
       </Link>
-      <ul className={`text-sm flex items-center gap-4 font-bold ${textColor} `}>
-        <li>Instagram</li>
-        <li>Facebook</li>
-        <li>Twitter</li>
-        <span>
+      <span className="flex items-center gap-4">
+        <ul
+          className={`hidden text-sm sm:flex items-center gap-4 font-bold ${textColor} `}
+        >
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Twitter</li>
+        </ul>
+        <span className={`flex text-sm items-center ${textColor}`}>
           <FaShoppingBag />
         </span>
-      </ul>
+      </span>
     </div>
   );
 };
